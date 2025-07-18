@@ -1,11 +1,14 @@
-const apiKey = "API_KEY"; //please generate an api key and only add the api key over here from openweather api.
+require("dotenv").config();
+const apiKey = process.env.API_KEY; // please generate an api key and only then add the api key over here from openweather api.
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
+
+// console.log(apiKey);
 
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const weatherIcon = document.querySelector(".weather-icon");
 
-async function checkWeather(city) {
+async function checkWeather(city) { 
   const response = await fetch(apiUrl + city + `&appid=${apiKey}&units=metric`);
 
   if (response.status == 404) {
