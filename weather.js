@@ -56,6 +56,7 @@ function searchWeather() {
   }
   searchBox.value = "";
 }
+
 function searchWeather() {
   const cityName = searchBox.value.trim();
   if (cityName) {
@@ -64,3 +65,4 @@ function searchWeather() {
     searchBox.blur();
   }
 }
+searchWeather();
